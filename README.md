@@ -1,9 +1,8 @@
 # SSP - Modern Front-End Dev Skill Challenge
 
-This is my take on a creative code challenge to develop a splash screen. The challenge instructions are minimal, providing only business-card-level details, a black and white logo, and an eps a vector with hipster forest graphics (aka: complete creative freedom). After three sit downs, this is what I created:
+This is my take on a creative code challenge to develop a splash screen. The challenge instructions were minimal: provided with business-card-level details, a black and white logo, and an eps a vector with hipster forest graphics (aka: complete creative freedom) - make a simple splash page. After three sit downs, this is what I created:
 
 🚀 https://io.davidsword.ca/ssp/
-
 
 ## Break Down
 
@@ -36,18 +35,25 @@ Here's a list of the features, tools, practices, standards, and techniques used:
 -   Schema.org tags
 -   OpenGraph Tags
 -   Twitter Cards
--   Proper favicons
+-   Proper favicons for all devices
 -   `.webmanifest` & other graphical progressive web-app data
 
 **JAVASCRIPT**
 
--   Componentized `.js` files, compiled with Webpack
+-   ES6 converted to ES5 with Babel
+-   Componentized `.js` files, npm import, compiled with Webpack
     -   Handler for Email form
 	-   Vanilla "waypoints" for scroll instruction icon
--   ES6 converted to ES5 with Babel
+
+**HOSTING**
+
+-   Served with ⚡http2
+-   `mod_expire` browser cache
+-   `mod_deflate` compression
 
 ### TODO
 
+- [ ] Consider splitting css for Optimize CSS Delivery
 - [ ] Responsive
 - [ ] IE / Edge support, check Opera, Chrome, Firefox
 - [ ] 100/100 on PageSpeed.
