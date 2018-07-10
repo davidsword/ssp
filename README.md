@@ -24,11 +24,13 @@ Here's a list of the features, tools, practices, standards, and techniques used:
 
 **OPTIMIZATION**
 
--   ~700kb, 60ms load time
+-   617KB, 1.0s load time
+-   `gulp-imagemin` for png, jpg, svg
 
 **BENCHMARKS**
 
--   (tbd)
+-   [91/100](https://developers.google.com/speed/pagespeed/insights/?url=https%3A%2F%2Fio.davidsword.ca%2Fssp%2F&tab=desktop) Google PageSpeed
+- [A 99%](https://gtmetrix.com/reports/io.davidsword.ca/u7Eoy3ID) GTMetrix
 
 **INTEGRATION**
 
@@ -53,8 +55,6 @@ Here's a list of the features, tools, practices, standards, and techniques used:
 
 ### TODO
 
-- [ ] Consider splitting css for Optimize CSS Delivery
 - [ ] Responsive
+- [ ] Consider splitting css for Optimize CSS Delivery
 - [ ] IE / Edge support, check Opera, Chrome, Firefox
-- [ ] 100/100 on PageSpeed.
-- [ ] A on GTMetrics.
