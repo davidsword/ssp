@@ -4,7 +4,7 @@ This is my take on a creative code challenge to develop a splash screen. The cha
 
 After two sit downs, this is what I created:
 
-> **https://davidsword.github.io/ssp/**
+> **https://io.davidsword.ca/ssp/**
 
 
 ## Break Down
