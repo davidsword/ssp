@@ -1,0 +1,346 @@
+@import 'vendor/_reset';
+
+* {
+	box-sizing: border-box;
+}
+
+body,
+html {
+	background: #600c93;
+	color: white;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 1.8em;
+	text-align: center;
+}
+
+.middle {
+	background: rgba(0, 240, 255, 0.5);
+	height: 100vh;
+	left: 50%;
+	position: fixed;
+	position: absolute;
+	top: 0;
+	width: 1px;
+	z-index: 99999;
+}
+
+// Main Parallax
+
+.sky {
+	animation: AnimationName 11s ease infinite;
+	background: #ddefff;
+	background: linear-gradient(#ddefff, #fbc7ff);
+	background-size: 400% 400%;
+	height: 60vh;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+}
+@-webkit-keyframes AnimationName {
+	0%{background-position:97% 0%}
+	50%{background-position:4% 100%}
+	100%{background-position:97% 0%}
+}
+@-moz-keyframes AnimationName {
+	0%{background-position:97% 0%}
+	50%{background-position:4% 100%}
+	100%{background-position:97% 0%}
+}
+@keyframes AnimationName {
+	0%{background-position:97% 0%}
+	50%{background-position:4% 100%}
+	100%{background-position:97% 0%}
+}
+
+.prllx {
+	bottom: 0;
+	height: 100vh;
+	left: 50%;
+	margin-left: -1500px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	perspective: 100px;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.prllx__item {
+	bottom: 0;
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+
+	img {
+		bottom: 0;
+		display: block;
+		position: absolute;
+	}
+}
+$prllx__items: 5;
+@for $i from 0 through $prllx__items {
+	$x: ($prllx__items - $i) / 2;
+	$z: ($prllx__items - $i) / 1.5;
+
+	.prllx__item__#{$i} {
+		bottom: $z#{px};
+		top: auto;
+		transform: translateZ(-100 * $x#{px}) scale($x + 1);
+	}
+}
+
+.prllx__content {
+	background: #43056a;
+	display: block;
+	left: 0;
+	padding-top: 50px;
+	position: absolute;
+	right: 0;
+	top: 100%;
+	z-index: 2;
+}
+
+// Content
+
+$spacing: 32px;
+$contentWidth: 720px;
+
+.container {
+	margin: 0 auto 0 1500px - ($contentWidth / 2);
+	@media screen and (max-width: $contentWidth) {
+		margin: 0 auto 0 calc(1500px - 50vw);
+	}
+	max-width: $contentWidth;
+	padding: 0 5vw;
+	width: 100vw;
+}
+
+h2 {
+	font-size: 35px;
+	font-weight: 300;
+	line-height: 1.6em;
+	padding-bottom: $spacing;
+}
+
+input,
+p {
+	color: rgba(255,255,255,0.95);
+	font-size: 20px;
+}
+
+p {
+	padding-bottom: $spacing;
+}
+
+.icon,
+a,
+button {
+	transition: 0.5s all ease;
+}
+
+.contact {
+	margin: 0 auto $spacing;
+	width: auto;
+	@media screen and (min-width: 480px) {
+		display: flex;
+		div {
+			flex: 1;
+			&:nth-child(1) {
+				margin-right: 12px;
+				text-align: right;
+			}
+			&:nth-child(2) {
+				margin-left: 12px;
+				text-align: left;
+			}
+		}
+	}
+}
+
+.icon {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 90%;
+	display: inline-block;
+	font-size: 0.1em;
+	height: 36px;
+	margin: 0 5px;
+	overflow: hidden;
+	text-align: left;
+	text-indent: -100px;
+	width: 36px;
+
+	&.icon--facebook {
+		background-image: url("../imgs/icon_facebook.svg");
+	}
+
+	&.icon--twitter {
+		background-image: url("../imgs/icon_twitter.svg");
+	}
+
+	&.icon--x {
+		background-image: url("../imgs/icon_x.png");
+		height: 38px;
+		margin-bottom: 15px;
+		width: 59px;
+	}
+
+	&.icon--down {
+		animation: moveDown 1.2s ease infinite;
+		background-image: url("../imgs/icon_down.svg");
+		bottom: 36px;
+		left: calc(50% - 23px);
+		position: fixed;
+		z-index: 9999;
+
+		&.hide {
+			animation: none;
+			opacity: 0;
+			transform: scale(0.5);
+		}
+	}
+}
+
+a.icon:hover {
+	opacity: 0.8;
+	transform: scale(1.1);
+}
+
+// Subscribe Form
+
+$formspacing: 7px;
+
+form {
+	background: darken(#421466, 5%);
+	border: 1px solid transparent;
+	border-radius: 2px;
+	height: auto;
+	margin: 0 auto $spacing;
+	max-width: 390px;
+	padding: $formspacing;
+	position: relative;
+	width: 90vw;
+	@media screen and (min-width: 480px) {
+		height: 36px + ($formspacing * 2);
+	}
+
+	.form-group {
+		button,
+		input[type=text] {
+			background: transparent;
+			border: none;
+			box-sizing: border-box;
+			display: inline-block;
+			height: 36px;
+			line-height: 1em;
+			position: relative;
+			width: 100%;
+			@media screen and (min-width: 480px) {
+				position: absolute;
+			}
+		}
+
+		input[type=text] {
+			font-weight: 300;
+			line-height: 1.4em;
+			margin-bottom: $formspacing;
+			padding: 0 10px;
+			@media screen and (min-width: 480px) {
+				left: $formspacing;
+				margin-bottom: 0;
+				width: 60%;
+			}
+		}
+
+		button {
+			background: lighten(#421466, 20%);
+			border-radius: 2px;
+			color: white;
+			font-size: 14px;
+			font-weight: bold;
+			height: 36px;
+			padding: 11px 18px;
+			text-transform: uppercase;
+			@media screen and (min-width: 480px) {
+				right: $formspacing;
+				width: 35%;
+			}
+			&:hover {
+				background: lighten(#421466, 30%);
+				cursor: pointer;
+				transform: scale(1.05) translateX(-2px);
+			}
+		}
+	}
+	&.error {
+		animation: nono 0.4s 1 linear;
+		border-color: red;
+	}
+	&.success button {
+		&, &:hover {
+			background: rgb(9, 157, 5);
+		}
+	}
+}
+
+// Social Icons
+
+.social {
+	margin-bottom: $spacing;
+}
+
+// Footer Credits
+
+.credits {
+	line-height: 1.9em;
+	padding-top: 170px;
+
+	&,
+	a {
+		color: rgba(255,255,255,0.5);
+		font-size: 14px;
+		text-decoration: none;
+	}
+
+	a {
+		border-bottom: 1px solid rgba(255,255,255,0.25);
+		display: inline-block;
+		padding-bottom: 0;
+
+		&:hover {
+			border-color: white;
+			color: white;
+		}
+	}
+}
+
+// Animation
+
+@keyframes moveDown {
+	0% {
+		opacity: 0.3;
+		transform: translateY(-20px) scale(0.5);
+	}
+	60% {
+		opacity: 1;
+		transform: translateY(10px) scale(0.8);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(50px) scale(0.4);
+	}
+}
+
+@keyframes nono {
+	0% { -webkit-transform: translate(30px); }
+	20% { -webkit-transform: translate(-30px); }
+	40% { -webkit-transform: translate(15px); }
+	60% { -webkit-transform: translate(-15px); }
+	80% { -webkit-transform: translate(8px); }
+	100% { -webkit-transform: translate(0px); }
+}
