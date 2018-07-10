@@ -73,7 +73,7 @@ gulp.task( 'browser-sync', ['styles', 'scripts'], function () {
 
 gulp.task( 'watch', function () {
   // Watch .html files
-  gulp.watch( '*.html', ['html', browserSync.reload] );
+  gulp.watch( 'src/*.html', ['html', browserSync.reload] );
   gulp.watch( "*.html" ).on( 'change', browserSync.reload );
   // Watch .sass files
   gulp.watch( 'src/sass/**/*.scss', ['styles', browserSync.reload] );
