@@ -1,15 +1,13 @@
-# MODERN FRONT-END DEV SKILL CHALLENGE
+# SSP - Modern Front-End Dev Skill Challenge
 
-This is my take on a creative code challenge to develop a splash screen. The challenge instructions are minimal, providing only business-card-level details, a black and white logo, and an eps a vector with hipster forest graphics (aka: complete creative freedom).
+This is my take on a creative code challenge to develop a splash screen. The challenge instructions are minimal, providing only business-card-level details, a black and white logo, and an eps a vector with hipster forest graphics (aka: complete creative freedom). After three sit downs, this is what I created:
 
-After two sit downs, this is what I created:
-
-> **https://io.davidsword.ca/ssp/**
+🚀 https://io.davidsword.ca/ssp/
 
 
 ## Break Down
 
-To save you time, here's a list of the features, tools, practices, standards, and techniques used:
+Here's a list of the features, tools, practices, standards, and techniques used:
 
 **TOOLING**
 
@@ -48,19 +46,9 @@ To save you time, here's a list of the features, tools, practices, standards, an
 	-   Vanilla "waypoints" for scroll instruction icon
 -   ES6 converted to ES5 with Babel
 
-**HOSTING**
-
--   Github pages with ⚡http2
--   Github CDN
-
-
-## TODO
+### TODO
 
 - [ ] Responsive
 - [ ] IE / Edge support, check Opera, Chrome, Firefox
 - [ ] 100/100 on PageSpeed.
 - [ ] A on GTMetrics.
-
-## Let's Talk
-
-Thanks for checking out my results, I hope you've enjoy it. Please feel free to email me if you want to talk about it! `david@davidsword.ca`
