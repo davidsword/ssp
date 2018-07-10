@@ -44,20 +44,23 @@ gulp.task( 'images', function () {
     .src( 'src/imgs/**' )
     .pipe( $.changed( 'imgs' ) )
     .pipe( $.imagemin( {
-      // Lossless conversion to progressive JPGs
       progressive: true,
-      // Interlace GIFs for progressive rendering
-      interlaced: true
+      interlaced: true,
+      optimizationLevel: 5,
+      svgoPlugins: [{
+        removeViewBox: true
+      }]
     } ) )
     .pipe( gulp.dest( 'public/imgs' ) )
     .pipe( $.size( {title: 'images'} ) );
 } );
 
-// gulp.task( 'html', function () {
-//   return gulp
-//     .src( './*.{html,json}' )
-//     .pipe( gulp.dest( 'public/' ) )
-// } );
+gulp.task( 'html', function () {
+  return gulp
+    .src( 'src/*.html' )
+	.pipe($.htmlmin({collapseWhitespace: true}))
+    .pipe( gulp.dest( './' ) )
+} );
 
 gulp.task( 'browser-sync', ['styles', 'scripts'], function () {
   browserSync( {
@@ -68,15 +71,9 @@ gulp.task( 'browser-sync', ['styles', 'scripts'], function () {
   } );
 } );
 
-// gulp.task( 'deploy', function () {
-//   return gulp
-//     .src( './public/**/*' )
-//     .pipe( ghPages() );
-// } );
-
 gulp.task( 'watch', function () {
   // Watch .html files
-  //gulp.watch( '*.html', ['html', browserSync.reload] );
+  gulp.watch( '*.html', ['html', browserSync.reload] );
   gulp.watch( "*.html" ).on( 'change', browserSync.reload );
   // Watch .sass files
   gulp.watch( 'src/sass/**/*.scss', ['styles', browserSync.reload] );
@@ -94,7 +91,7 @@ gulp.task( 'default', function () {
     'vendorScripts',
     'scripts',
     'images',
-    //'html',
+    'html',
     'browser-sync',
     'watch'
   );
