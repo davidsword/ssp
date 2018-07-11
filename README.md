@@ -53,7 +53,7 @@ Here's a list of the features, tools, practices, standards, and techniques used:
 -   `mod_expire` browser cache
 -   `mod_deflate` compression
 
-### TODO
+## TODO
 
 - [ ] Responsive
 - [ ] Consider splitting css for Optimize CSS Delivery
