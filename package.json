@@ -32,11 +32,12 @@
     "gulp-sass": "^4.0.1",
     "gulp-size": "^3.0.0",
     "gulp-uglify": "^3.0.0",
-	"gulp-htmlmin": "^4.0.0",
+    "gulp-htmlmin": "^4.0.0",
     "webpack-stream": "^4.0.3"
   },
   "dependencies": {
     "debounce": "^1.1.0",
+    "detect-browser": "^3.0.0",
     "email-validator": "^2.0.4"
   }
 }
