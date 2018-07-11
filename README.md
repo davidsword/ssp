@@ -16,7 +16,6 @@ This challenge is more than just what you build, it's how. Here's a list of the 
 **CSS**
 
 -   SASS
--   BEM naming convention
 -   Alphabetized CSS declarations
 -   Dynamic parallax effect with transform
 -   Used native system font
