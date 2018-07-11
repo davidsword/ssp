@@ -1,3 +1,7 @@
+/**
+ * Remove the scroll-instruction icon when scrolling started
+ * we're working off of `.prllx` scrolling, not `body`
+ */
 import debounce from 'debounce';
 
 // get the element to be stuck
@@ -5,8 +9,7 @@ const scrollIcon = document.querySelector('.icon--down');
 const prllx = document.querySelector('.prllx');
 const prllxContent = document.querySelector('.prllx__content');
 
-// on debounce scroll
-prllx.addEventListener('scroll', debounce(() => {
+function scroll() {
 	// get the viewport
 	const elem = document.documentElement || document.body;
 	const viewportHeight = elem.clientHeight;
@@ -21,4 +24,10 @@ prllx.addEventListener('scroll', debounce(() => {
 	} else {
 		scrollIcon.classList.remove('hide');
 	}
-}, 20));
+}
+
+// on debounce scroll
+prllx.addEventListener('scroll', debounce(scroll, 20));
+
+// fire on init
+scroll();

@@ -1,9 +1,11 @@
+/**
+ * Validate email address submission for mailchimp
+ * add `success` or `error` classes to <form>
+ */
 import validator from 'email-validator';
 
 const form = document.querySelector('form');
 
-// Validate email address submission for mailchimp
-// add `success` or `error` classes to <form>
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
 
