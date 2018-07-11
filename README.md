@@ -21,6 +21,7 @@ Here's a list of the features, tools, practices, standards, and techniques used:
 -   BEM naming convention
 -   Using native system font
 -   Alphabetized CSS declarations
+-   Responsive
 
 **OPTIMIZATION**
 
@@ -37,12 +38,13 @@ Here's a list of the features, tools, practices, standards, and techniques used:
 -   Schema.org tags
 -   OpenGraph Tags
 -   Twitter Cards
+-   Analytics
 -   Proper favicons for all devices
 -   `.webmanifest` & other graphical progressive web-app data
 
 **JAVASCRIPT**
 
--   ES6 converted to ES5 with Babel
+-   Used ES6, converted to ES5 with Babel
 -   Componentized `.js` files, npm import, compiled with Webpack
     -   Handler for Email form
 	-   Vanilla "waypoints" for scroll instruction icon
@@ -55,6 +57,5 @@ Here's a list of the features, tools, practices, standards, and techniques used:
 
 ## TODO
 
-- [ ] Responsive
 - [ ] Consider splitting css for Optimize CSS Delivery
-- [ ] IE / Edge support, check Opera, Chrome, Firefox
+- [ ] Use `body` instead of `.prllx` for scrolling on mobile
