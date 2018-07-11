@@ -2,6 +2,8 @@ import validator from 'email-validator';
 
 const form = document.querySelector('form');
 
+// Validate email address submission for mailchimp
+// add `success` or `error` classes to <form>
 form.addEventListener('submit', (e) => {
 	e.preventDefault();
 
@@ -12,6 +14,7 @@ form.addEventListener('submit', (e) => {
 	form.classList.remove('success', 'error');
 	form.classList.add(theResult);
 
+	// change submit button to confirmation for better ux
 	if (valid) {
 		document.querySelector('[type=submit]').innerText = 'Joined ✓';
 	}
