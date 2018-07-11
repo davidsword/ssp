@@ -94,6 +94,11 @@ $prllx__items: 5;
 	}
 }
 
+// Content
+
+$spacing: 32px;
+$contentWidth: 780px;
+
 .prllx__content {
 	background: #43056a;
 	display: block;
@@ -102,13 +107,7 @@ $prllx__items: 5;
 	position: absolute;
 	right: 0;
 	top: 100%;
-	z-index: 2;
 }
-
-// Content
-
-$spacing: 32px;
-$contentWidth: 720px;
 
 .container {
 	margin: 0 auto 0 1500px - ($contentWidth / 2);
@@ -118,6 +117,15 @@ $contentWidth: 720px;
 	max-width: $contentWidth;
 	padding: 0 5vw;
 	width: 100vw;
+}
+
+.browser-warning {
+	background: #eaa9a3;
+	border: 6px solid #c42c25;
+	border-radius: 6px;
+	color: #641300;
+	margin: $spacing;
+	padding: 2em;
 }
 
 h2 {
@@ -137,6 +145,10 @@ p {
 	padding-bottom: $spacing;
 }
 
+a, a:link, a:visited {
+	color: white;
+	text-decoration: none;
+}
 .icon,
 a,
 button {
@@ -343,4 +355,74 @@ form {
 	60% { -webkit-transform: translate(-15px); }
 	80% { -webkit-transform: translate(8px); }
 	100% { -webkit-transform: translate(0px); }
+}
+
+
+// we're disabling the animation for IE, Edge, and some mobile
+// this is `shame.css`
+.disable-awesome-animation {
+	
+	.icon--down {
+		bottom: 100px;
+	}
+	.prllx__item {
+		bottom: auto;
+		display: none;
+		display: block;
+		height: 445px;
+		perspective: none;
+		transform: none;
+		img {
+		}
+	}
+	@for $i from 0 through $prllx__items {
+		$x: ($i * 4) + 5;
+		.prllx__item__#{$i} {
+			top: $x#{%};
+		}
+	}
+	.prllx__item__0 {
+		top: 2%;
+	}
+	.prllx__content {
+		padding-top: 0;
+		top: calc(25% + 445px);
+	}
+
+	// and for the tiny phone users
+	@media screen and (max-width: 480px) {
+		.prllx__item__0 {
+			top: 0%;
+			img {
+				transform: scale(0.5) translateY(-30px);
+			}
+		}
+		.prllx__item__1 img {
+			transform: scale(0.8);
+		}
+		h2 {
+			font-size: 26px;
+		}
+		body, p, input, button {
+			font-size: 18px;
+		}
+		.credits {
+			padding-top: 100px;
+			&, * {
+				font-size: 12px;
+			}
+		}
+	}
+
+	// really rare case where scroll instructions overlaps text on some devices
+	@media screen and (max-height: 430px) {
+		.icon--down {
+			bottom: 20px;
+		}
+	}
+	@media screen and (min-height: 720px) {
+		.icon--down {
+			display: none;
+		}
+	}
 }
