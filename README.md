@@ -2,7 +2,7 @@
 
 This is my take on a creative code challenge to develop a splash screen. The challenge instructions were minimal: provided with business-card-level details, a logo, and some hipster-forest graphics, build a simple splash page. After three sit downs, this is what I built:
 
-🚀 https://io.davidsword.ca/ssp/
+🚀 https://io.davidsword.ca/ssp/index.html
 
 ## Break Down
 
